@@ -61,6 +61,7 @@ function Header() {
               <Image src="/logo_transparent.png" alt="Sidekick" width={32} height={32} />
             </Link>
           </Box>
+          <p className="mx-auto text-xl text-center text-white font-normal leading-relaxed fs521 lg:w-2/3">Sidekick</p>
 
           {mobile ? (
             <Box sx={{ flexGrow: 0 }}>
@@ -134,7 +135,7 @@ function Header() {
                   </Button>
                 </Link>
                 <Link href="/signup">
-                  <Button variant="contained" color="primary" sx={{ backgroundColor: "blue" }}>
+                  <Button variant="contained" className="bg-orangePrimary">
                     Sign up
                   </Button>
                 </Link>
