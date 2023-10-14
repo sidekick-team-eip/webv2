@@ -58,6 +58,7 @@ function Header() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+  console.log("session", session);
 
   return (
     <AppBar position="relative" color="transparent" elevation={0} className='p-4'>
