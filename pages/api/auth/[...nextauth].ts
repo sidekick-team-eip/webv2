@@ -46,17 +46,6 @@ export const authOptions: NextAuthOptions = {
 
           const user = await userInfos.json();
 
-          let admin = false;
-          const admin_req = await fetch(process.env.NEXT_PUBLIC_API_URL + "/auth/admin", {
-            method: "GET",
-            headers: {
-              "Authorization": `Bearer ${tokens.access_token}`,
-            }
-          });
-
-          if (admin_req.ok)
-            admin = true;
-
           return {
             id: user.userId,
             username: user.username,
@@ -64,7 +53,6 @@ export const authOptions: NextAuthOptions = {
             access_token: tokens.access_token,
             refresh_token: tokens.refresh_token,
             sidekick: user.sidekick_id,
-            admin,
           }
         } catch (e) {
           console.log(e);
@@ -155,17 +143,6 @@ export const authOptions: NextAuthOptions = {
             throw new Error("Unable to get user infos");
           }
 
-          let admin = false;
-          const admin_req = await fetch(process.env.NEXT_PUBLIC_API_URL + "/auth/admin", {
-            method: "GET",
-            headers: {
-              "Authorization": `Bearer ${tokens.access_token}`,
-            }
-          });
-
-          if (admin_req.ok)
-            admin = true;
-
           const user = await userInfos.json();
 
           return {
@@ -175,7 +152,6 @@ export const authOptions: NextAuthOptions = {
             access_token: tokens.access_token,
             refresh_token: tokens.refresh_token,
             sidekick: user.sidekick_id,
-            admin
           }
         } catch (e) {
           console.log(e);

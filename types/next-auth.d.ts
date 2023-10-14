@@ -9,7 +9,6 @@ declare module "next-auth" {
       sidekick: string;
       access_token: string;
       refresh_token: string;
-      admin: boolean;
     }
   }
 }
